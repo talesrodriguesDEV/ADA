@@ -2,6 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const populateDB = require('../database/populateDB')
 const connectDB = require('../database/connectDB')
+const router = require('./routes')
 
 dotenv.config()
 
@@ -11,5 +12,8 @@ populateDB()
 connectDB()
 
 const server = express()
+
+server.use(express.json())
+server.use('/contas', router)
 
 server.listen(API_PORT, console.log(`Server running on port ${API_PORT}`))
