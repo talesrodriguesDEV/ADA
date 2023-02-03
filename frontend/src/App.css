@@ -16,10 +16,6 @@ html, #root {
   min-height: 100vh;
 }
 
-img {
-  width: 300px;
-}
-
 header {
   background-color: white;
   display: flex;
@@ -31,9 +27,21 @@ header {
   padding: 20px 0px;
 }
 
+img {
+  width: 300px;
+}
+
 form {
   display: flex;
   flex-direction: column;
+}
+
+#loading {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 45%;
+  margin: 50px 30px
 }
 
 footer {
@@ -50,14 +58,14 @@ footer {
     font-size: large;
   }
 
-  img {
-    width: 400px;
-  }
-
   header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+
+  img {
+    width: 400px;
   }
 
   footer {

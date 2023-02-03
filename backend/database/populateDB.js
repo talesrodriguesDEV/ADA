@@ -1,6 +1,7 @@
-const Conta = require('./models/Conta')
 const fs = require('fs')
 const path = require('path')
+
+const Conta = require('./models/Conta')
 
 const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/contas.json')))
 

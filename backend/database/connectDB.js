@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
 
+const dotenv = require('dotenv')
 dotenv.config()
 const MONGO_PORT = process.env.MONGO_PORT || 27017
 

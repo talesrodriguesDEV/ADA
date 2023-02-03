@@ -1,5 +1,6 @@
-const express = require('express')
 const Conta = require('../database/models/Conta')
+
+const express = require('express')
 
 const router = express.Router()
 

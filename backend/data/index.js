@@ -1,7 +1,9 @@
-const reservas = require('./reservas.json')
-const { addDays, addHours } = require('date-fns')
 const fs = require('fs')
 const path = require('path')
+
+const { addDays, addHours } = require('date-fns')
+
+const reservas = require('./reservas.json')
 
 const formateDate = (date) => {
   const aux = date.split('-')
@@ -25,6 +27,7 @@ const nextTuesday = (weekDay, date) => {
 
 const contas = reservas.reduce((acc, curr) => {
   const codProp = curr['Nome alojamento']
+
   let rValor
   let rVenc
   let pValor
@@ -32,6 +35,7 @@ const contas = reservas.reduce((acc, curr) => {
 
   const checkIn = formateDate(curr['Data de check-in'])
   const checkOut = formateDate(curr['Data de check-out'])
+
   const checkOutDay = checkOut.getDay()
 
   if (curr.Portal === 'Booking.com') {
