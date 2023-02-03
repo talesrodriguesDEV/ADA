@@ -22,6 +22,9 @@ router.get('/tipo/:rp', async (req, res) => {
     case 'p':
       tipo = 'A pagar'
       break
+    case 'rp':
+      tipo = /A/
+      break
     default:
       tipo = ''
       break
@@ -37,7 +40,7 @@ router.get('/mes-venc/:m', async (req, res) => {
 
   const contas = await Conta.find({})
 
-  const contasFiltradas = contas.filter(conta => conta.venc.getMonth() === Number(m) - 1)
+  const contasFiltradas = contas.filter(conta => conta.venc.getMonth() === Number(m) - 1 || Number(m) === 0)
 
   res.status(200).json(contasFiltradas)
 })
