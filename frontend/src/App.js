@@ -90,6 +90,16 @@ function App () {
     else if (!disable3) fetchBills(true, byMonth)
   }
 
+  const generateReport = () => {
+    const file = new File([JSON.stringify(bills)], 'report')
+    const url = URL.createObjectURL(file)
+
+    const a = document.createElement('a')
+    a.download = 'report.json'
+    a.href = url
+    a.click()
+  }
+
   return (
     <div className="container">
       <header>
@@ -131,6 +141,7 @@ function App () {
             <p>Vencimento: {new Date(bill.venc).toLocaleDateString('pt-BR')}</p>
           </div>
         ))}
+        <Button onClick={generateReport}>Gerar Relatório</Button>
       </main>
     </div>
   )
